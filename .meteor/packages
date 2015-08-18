@@ -7,3 +7,6 @@
 meteor-platform
 accounts-password
 accounts-ui
+iron:router
+alanning:roles
+aldeed:collection2

@@ -1,0 +1,9 @@
+<template name="userProfile">
+  <h1>{{username}} profile</h1>
+  <h2>Your messages:</h2>
+  {{#each messages}}
+    <p>{{formatDate timestamp}}: {{text}}</p>
+  {{else}}
+    <p>No messages.</p>
+  {{/each}}
+</template>
