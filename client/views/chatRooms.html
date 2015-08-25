@@ -1,0 +1,8 @@
+<template name="chatRooms">
+  <h1>Chat rooms</h1>
+  {{#each chatRooms}}
+    <p><a href="{{pathFor 'chatRoom' _id=_id}}">{{name}}</a></p>
+  {{else}}
+    <p>No chat rooms.</p>
+  {{/each}}
+</template>

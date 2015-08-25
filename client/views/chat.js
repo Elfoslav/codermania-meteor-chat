@@ -1,4 +1,4 @@
-Template.hello.helpers({
+Template.chat.helpers({
   messages: function() {
     return Messages.find({}, { sort: { timestamp: -1 }});
   },
@@ -11,13 +11,16 @@ Template.hello.helpers({
   }
 });
 
-Template.hello.events({
+Template.chat.events({
   'submit #chat-form': function(e) {
     e.preventDefault();
     var form = e.target;
-    var message = form.message.value;
+    var data = {
+      message: form.message.value,
+      chatRoomId: Router.current().params._id
+    };
     form.message.value = '';
-    Meteor.call('addMessage', message, function(err, result) {
+    Meteor.call('addMessage', data, function(err, result) {
       if (err) {
         alert(err.reason);
         form.message.value = message;

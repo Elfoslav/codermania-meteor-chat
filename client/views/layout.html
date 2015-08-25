@@ -1,0 +1,22 @@
+<head>
+  <title>chat</title>
+</head>
+
+<body>
+  
+</body>
+
+<template name="layout">
+  <h1>Welcome to advanced Meteor!</h1>
+  {{> loginButtons}}
+  <br>
+  <br>
+  
+  {{#if currentUser}}
+    <p>
+      <a href="{{pathFor 'createChatRoom'}}">Create a chat room</a> |
+      <a href="{{pathFor 'chatRooms'}}">List of chat rooms</a>
+    </p>
+  {{/if}}
+  {{> yield}}
+</template>

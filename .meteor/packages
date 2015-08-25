@@ -10,3 +10,6 @@ accounts-ui
 iron:router
 alanning:roles
 aldeed:collection2
+velocity:core
+sanjo:jasmine
+velocity:html-reporter

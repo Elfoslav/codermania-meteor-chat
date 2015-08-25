@@ -1,16 +1,22 @@
-<head>
-  <title>chat</title>
-</head>
-
-<body>
-  
-</body>
-
-<template name="layout">
-  <h1>Welcome to advanced Meteor!</h1>
-  {{> loginButtons}}
-  <br>
-  <br>
-
-  {{> yield}}
+<template name="chat">
+  <form id="chat-form">
+    <textarea name="message" rows="5"></textarea>
+    <p>
+      <input type="submit">
+    </p>
+  </form>
+  {{#if currentUser}}
+    {{#each messages}}
+      <p class="message">
+        {{formatDate timestamp}}, 
+        <a href="{{pathFor 'userProfile' username=username}}">{{username}}</a>: 
+        <span class="click-me">{{text}}</span>
+        {{#if canDelete}}
+          <button class="delete-msg">Delete</button>
+        {{/if}}
+      </p>
+    {{/each}}
+  {{else}}
+    <p>Log in to see the messages.</p>
+  {{/if}}
 </template>

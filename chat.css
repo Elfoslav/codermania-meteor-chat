@@ -1,1 +1,12 @@
-/* CSS declarations go here */
+@keyframes newMessage {
+  from { left: -900px; }
+  to { left: 0px; }
+}
+@-moz-keyframes newMessage {
+  from { left: -900px; }
+  to { left: 0px; }
+}
+.message {
+  position: relative;
+  animation: newMessage .6s ease-out;
+}
